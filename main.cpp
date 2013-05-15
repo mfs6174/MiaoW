@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
     string rdstr;
     while (getline(cin,rdstr))
     {
+      rdstr+='\n';
       int rst=sender.msend(rdstr);
       if (rst)
       {

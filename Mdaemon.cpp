@@ -81,7 +81,7 @@ int Mdaemon::run()
       {
         printf("UDP receive from %s :\n",inet_ntoa(cliAddr.sin_addr));
         buff[revLen]='\0';
-        printf("%s",buff);
+        printf("%s\n",buff);
       }
     }
     else
@@ -108,7 +108,13 @@ int Mdaemon::run()
       }
       if (revLen<0)
       {
+        cout<<endl;
         cout<<"Error during receiving"<<endl;
+      }
+      else
+      {
+        cout<<endl;
+        cout<<"Client close the connection"<<endl;
       }
       close(csfd);
     }
